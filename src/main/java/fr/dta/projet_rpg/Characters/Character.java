@@ -3,18 +3,19 @@ package fr.dta.projet_rpg.Characters;
 import Monsters.Monster;
 
 public class Character {
-	private int health_pt;
-	private int experience_pt;
-	private int level = 1;
-	private int strengh;
-	private int agility;
-	private int intelligence;
+	String name;
+	private double health_pt;
+	private double experience_pt;
+	private double level = 1;
+	private double strengh;
+	private double agility;
+	private double intelligence;
 
 	public Character() {
 
 	}
 
-	public Character(int health_pt, int experience_pt, int level, int strengh, int agility, int intelligence) {
+	public Character(double health_pt, double experience_pt, double level, double strengh, double agility, double intelligence, String name) {
 		super();
 		this.health_pt = health_pt;
 		this.experience_pt = experience_pt;
@@ -22,54 +23,63 @@ public class Character {
 		this.strengh = strengh;
 		this.agility = agility;
 		this.intelligence = intelligence;
+		this.name = name;
 	}
 
-	public int gethealth_pt() {
+	public double getHealth_pt() {
 		return health_pt;
 	}
 
-	public void sethealth_pt(int health_pt) {
+	public void setHealth_pt(double health_pt) {
 		this.health_pt = health_pt;
 	}
 
-	public int getexperience_pt() {
+	public double getExperience_pt() {
 		return experience_pt;
 	}
 
-	public void setexperience_pt(int experience_pt) {
+	public void setExperience_pt(double experience_pt) {
 		this.experience_pt = experience_pt;
 	}
 
-	public int getLevel() {
+	public double getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(double level) {
 		this.level = level;
 	}
 
-	public int getStrengh() {
+	public double getStrengh() {
 		return strengh;
 	}
 
-	public void setStrengh(int strengh) {
+	public void setStrengh(double strengh) {
 		this.strengh = strengh;
 	}
 
-	public int getAgility() {
+	public double getAgility() {
 		return agility;
 	}
 
-	public void setAgility(int agility) {
+	public void setAgility(double agility) {
 		this.agility = agility;
 	}
 
-	public int getIntelligence() {
+	public double getIntelligence() {
 		return intelligence;
 	}
 
-	public void setIntelligence(int intelligence) {
+	public void setIntelligence(double intelligence) {
 		this.intelligence = intelligence;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public double physicalAttack(Monster monster) {
@@ -106,5 +116,17 @@ public class Character {
 		return damage;
 
 	}
+
+	@Override
+	public String toString() {
+		return " health=" + health_pt + ", \n"
+				+ "experience=" + experience_pt + ", \n"
+				+ "level=" + level + ", \n"
+				+ "strengh=" + strengh + ", \n"
+				+ "agility=" + agility + ", \n"
+				+ "intelligence=" + intelligence + "";
+	}
+	
+	
 
 }
