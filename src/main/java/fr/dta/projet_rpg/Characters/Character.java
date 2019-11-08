@@ -74,12 +74,12 @@ public class Character {
 
 	public double physicalAttack(Monster monster) {
 		double damage = 0;
-		double luck = Math.random() * 0.7;
+		double luck = Math.random();
 
-		double hitchance = 0.7
+		double hit_chance = 0.7 //chance for the player to touch the monster
 				+ (this.getLevel() - monster.getLevel() * 0.1 + (this.getAgility() - monster.getAgility()) * 0.05);
 
-		if (hitchance >= 1 || hitchance >= luck) {
+		if (hit_chance >= 1 || hit_chance >= luck) { //touch if the luck is 
 			damage = this.getStrengh() * (Math.random() * 12);
 
 		} else {
@@ -94,10 +94,10 @@ public class Character {
 		double damage = 0;
 		double luck = Math.random() * 0.9;
 
-		double cursechance = 0.9
+		double curse_chance = 0.9
 				+ (this.getLevel() - monster.getLevel() * 0.1 + (this.getAgility() - monster.getAgility()) * 0.05);
 
-		if (cursechance >= 1 || cursechance >= luck) {
+		if (curse_chance >= 1 || curse_chance >= luck) {
 			damage = this.getIntelligence() * (Math.random() * 12);
 
 		} else {
